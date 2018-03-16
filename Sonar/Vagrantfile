@@ -22,10 +22,7 @@ Vagrant.configure("2") do |config|
   end
   config.vm.provision "shell", inline: <<-SHELL
      yum -y update
-  SHELL
-
-  config.vm.provision "shell", inline: <<-SHELL
-      cp /vagrant/sonar.service /etc/systemd/system/
+     cp /vagrant/sonar.service /etc/systemd/system/
   SHELL
 
   config.vm.provision "shell", path:"sonar_installation.sh"
